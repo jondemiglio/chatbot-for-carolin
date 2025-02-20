@@ -1,4 +1,3 @@
-
 import streamlit as st
 import openai
 import PyPDF2
@@ -38,8 +37,8 @@ def extract_text(file):
 # -------------------------------------------------
 # 3. Streamlit app configuration
 # -------------------------------------------------
-st.set_page_config(page_title="Chat with Documents", layout="wide")
-st.title("📄 Chat with Your Documents")
+st.set_page_config(page_title="Chat with AI", layout="wide", menu_items={'Get Help': None, 'Report a bug': None, 'About': None})
+st.title("💬 Chat with AI")
 
 # -------------------------------------------------
 # 4. Initialize session state variables
@@ -85,7 +84,7 @@ for msg in st.session_state["messages"]:
 # -------------------------------------------------
 # 7. Chat input and processing
 # -------------------------------------------------
-user_input = st.chat_input("Ask something about your documents or anything else...")
+user_input = st.chat_input("Ask something...")
 if user_input:
     st.session_state["messages"].append({"role": "user", "content": user_input})
     with st.chat_message("user"):

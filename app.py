@@ -91,7 +91,7 @@ if user_input:
         st.markdown(user_input)
 
     # Build the messages context for OpenAI API
-    messages = [{"role": "system", "content": "You are a helpful AI assistant."}]
+    messages = [{"role": "system", "content": "You are a helpful AI assistant. You CAN process and analyze uploaded documents. Use the extracted text from uploaded files to answer user questions."}]
     if st.session_state["documents"]:
         st.write(f"DEBUG: Documents stored - {len(st.session_state['documents'])} documents")
         combined_docs = "\n".join(st.session_state["documents"])
